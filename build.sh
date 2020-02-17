@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker build -t neznajki/dynatech-challange .
-docker push neznajki/dynatech-challange:latest
+docker build -t neznajki/mysql-concurrency-test .
+docker push neznajki/mysql-concurrency-test:latest

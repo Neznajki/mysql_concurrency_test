@@ -1,11 +1,7 @@
 FROM openjdk:11
 MAINTAINER Maris Locmelis
 
-WORKDIR /
-ADD dynatech-challange.jar dynatech-challange.jar
-ADD testData.json testData.json
+WORKDIR /java/
+COPY out/artifacts/mysql_concurrency_test_jar/mysql_concurrency_test.jar mysql_concurrency_test.jar
 
-ENV DATA_FILE=testData.json
-ENV RESULT_FILE=/tmp/results.json
-
-CMD java -jar dynatech-challange.jar
+CMD java -classpath mysql_concurrency_test.jar test.Executor
